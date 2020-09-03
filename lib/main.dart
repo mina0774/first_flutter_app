@@ -87,7 +87,7 @@ class Grade extends StatelessWidget {
                 SizedBox(
                   width: 10.0,
                 ),
-                Text('using lightsaber',
+                Text('charming',
                 style: TextStyle(
                   fontSize: 16.0,
                   letterSpacing: 1.0
@@ -101,7 +101,7 @@ class Grade extends StatelessWidget {
                 SizedBox(
                   width: 10.0,
                 ),
-                Text('face hero tatoo',
+                Text('lovely snoopy',
                   style: TextStyle(
                       fontSize: 16.0,
                       letterSpacing: 1.0
@@ -115,7 +115,7 @@ class Grade extends StatelessWidget {
                 SizedBox(
                   width: 10.0,
                 ),
-                Text('fire flames',
+                Text('cute face',
                   style: TextStyle(
                       fontSize: 16.0,
                       letterSpacing: 1.0
