@@ -7,9 +7,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'First app',
-      theme: ThemeData(
-        primarySwatch: Colors.amber
-      ),
       home: MyHomePage(),
     );
   }
@@ -20,18 +17,21 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('meriel\'s first application'),
+        title: Text('MERIEL'),
+        centerTitle: true,
+        backgroundColor: Colors.redAccent,
+        elevation: 0.0,
       ),
-      body: Center(
+      body: Center( // 가로 센터
         child: Column(
-          children: <Widget>[
-            Text('Hello'),
-            Text('Hello'),
-            Text('Hello'),
-          ], // 배열 [] 안에 세로로 정렬될 위젯을 넣어라
-        ),  // 자식 내 모든 위젯을 세로로 배치
+            mainAxisAlignment: MainAxisAlignment.center, //세로 센터
+            children: <Widget>[
+              Text('Hello'),
+              Text('Hello'),
+              Text('Hello')
+            ],
+          ),
       ),
-
     );
   }
 }
