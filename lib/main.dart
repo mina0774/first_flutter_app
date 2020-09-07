@@ -2,139 +2,51 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+//App bar icon button
+// leading : 아이콘 버튼이나 간단한 위젯을 왼쪽에 배치할 때
+// actions : 복수의 아이콘 버튼 등을 오른쪽에 배치할 때
+// onPressed : 함수의 형태로 일반 버튼이나 아이콘 버튼을 터치했을 때 일어나는 이벤트를 정의하는 곳
+
+class MyApp extends StatelessWidget{
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return MaterialApp(
-      debugShowCheckedModeBanner: false, // 디버그 띠 없애기
-      title: 'MERIEL',
-      home: Grade(),
+      title: 'Appbar',
+      theme: ThemeData(
+        primarySwatch: Colors.red
+      ),
+      home: MyPage(),
     );
   }
 }
-
-class Grade extends StatelessWidget {
+class MyPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[800],
       appBar: AppBar(
-        title: Text('MERIEL'),
+        title: Text('Appbar icon menu'),
         centerTitle: true,
-        backgroundColor: Colors.amber[700],
         elevation: 0.0,
-      ),
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/snoopy_gif.gif'),
-                radius: 60.0,
-              ),
-            ),
-            Divider(
-              height: 60.0,
-              color: Colors.white,
-              thickness: 0.5,
-              endIndent: 30.0, // 디바이더 속성이 끝에서부터 얼마나 떨어져 있어야하는
-            ),
-            Text('NAME',
-          style: TextStyle(
-            color: Colors.white,
-            letterSpacing: 2.0
+        leading: IconButton(
+            icon: Icon(Icons.menu),
+            onPressed: (){
+              print('menu button is clicked');
+            },
+        ),
+        actions:<Widget>[IconButton(
+          icon: Icon(Icons.shopping_cart),
+          onPressed: (){
+            print('Shopping cart button is clicked');
+          },
+        ),
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: (){
+              print('search button is clicked');
+            },
           ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text('MERIEL',
-              style: TextStyle(
-                color: Colors.white,
-                letterSpacing: 2.0,
-                fontSize: 28.0,
-                fontWeight: FontWeight.bold
-              ),
-            ),
-            SizedBox(
-              height: 30.0,
-            ),
-            Text('MERIEL POWER LEVEL',
-              style: TextStyle(
-                  color: Colors.white,
-                  letterSpacing: 2.0
-              ),
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text('20',
-              style: TextStyle(
-                  color: Colors.white,
-                  letterSpacing: 2.0,
-                  fontSize: 28.0,
-                  fontWeight: FontWeight.bold
-              ),
-            ),
-            SizedBox(
-              height: 30.0,
-            ),
-            Row( //가로 배열
-              children: <Widget>[
-                Icon(Icons.check_circle_outline),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text('charming',
-                style: TextStyle(
-                  fontSize: 16.0,
-                  letterSpacing: 1.0
-                ),
-                ),
-              ],
-            ),
-            Row( //가로 배열
-              children: <Widget>[
-                Icon(Icons.check_circle_outline),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text('lovely snoopy',
-                  style: TextStyle(
-                      fontSize: 16.0,
-                      letterSpacing: 1.0
-                  ),
-                ),
-              ],
-            ),
-            Row( //가로 배열
-              children: <Widget>[
-                Icon(Icons.check_circle_outline),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Text('cute face',
-                  style: TextStyle(
-                      fontSize: 16.0,
-                      letterSpacing: 1.0
-                  ),
-                ),
-              ],
-            ),
-            Center(
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/snoopy.jpg'),
-                radius: 40.0,
-              ),
-            )
-
-      ],
-      ),
+        ],
       ),
     );
   }
 }
-
-
