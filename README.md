@@ -17,7 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 
 # Dart
 
-* class and widget
+< class and widget >
 
 class{ 속성, 기능 } -> 인스턴스
 
@@ -27,6 +27,7 @@ class{ 속성, 기능 } -> 인스턴스
 클래스가 정의된 후 메모리 상에 할당되었을 때 이를 객체라고 함
 - 프로그래밍 상에서 인스턴스란?
 클래스 기반으로 생성되고, 클래스의 속성과 기능을 똑같이 가지고 있고 프로그래밍 상에서 사용되는 대상
+- 위젯은 클래스의 인스턴스라고 할 수 있다!
 
 
 
