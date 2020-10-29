@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,37 +16,25 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         primarySwatch: Colors.red
       ),
-      home: MyPage(),
+      home: MyHomePage(),
     );
   }
 }
-class MyPage extends StatelessWidget{
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key}) : super(key: key);
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Appbar icon menu'),
-        centerTitle: true,
-        elevation: 0.0,
-        leading: IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: (){
-              print('menu button is clicked');
-            },
+      body: SafeArea(
+        child: WebView(
+          initialUrl: 'https://flutter.dev',
+          javascriptMode: JavascriptMode.unrestricted,
         ),
-        actions:<Widget>[IconButton(
-          icon: Icon(Icons.shopping_cart),
-          onPressed: (){
-            print('Shopping cart button is clicked');
-          },
-        ),
-          IconButton(
-            icon: Icon(Icons.search),
-            onPressed: (){
-              print('search button is clicked');
-            },
-          ),
-        ],
       ),
     );
   }
